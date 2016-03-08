@@ -9,8 +9,7 @@
 <ol>
 	<li>Compilação sem otimização (gcc primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.085 s ; user = 0.034 s  ; system = 0.016 s.
-			</li>
+			<li>Tempo de compilação: real = 0.085 s ; user = 0.034 s  ; system = 0.016 s. </li>
 			<li>Tempo de execução: real = 0.400 s; user = 0.398s; system = 0.001 s. </li>
 		</ul>
 	</li>
@@ -25,26 +24,79 @@
 
 	<li>Compilação com otimização O1 (gcc -O1  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.z s ; user = 0.x s; system = 0.c s.
+			<li>Tempo de compilação: real = 0.076 s ; user = 0.036 s; system = 0.021 s.
 			</li>
-			<li>Tempo de execução: real = 0.x s; user = 0.z s; system = 0.v s. </li>
+			<li>Tempo de execução: real = 0.399 s; user = 0.397 s; system = 0.001 s. </li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização O2 (gcc -O2  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.x s ; user = 0.x ; system = 0.x s.
+			<li>Tempo de compilação: real = 0.088 s ; user = 0.42 ; system = 0.019 s.
 			</li>
-			<li>Tempo de execução: real = 0.x s; user = 0.x s; system = 0.x s. </li>
+			<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização O3 (gcc -O3  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.x s ; user = 0.x s ; system = 0.x s.
+			<li>Tempo de compilação: real = 0.080 s ; user = 0.044 s ; system = 0.017 s.
 			</li>
-			<li>Tempo de execução: real = 0.x s; user = 0.x s; system = 0.x s. </li>
+			<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
 		</ul>
 	</li>
+	
+	<li>Compilação com otimização -mtune=native (gcc -mtune=native  primo.c -o primo):
+		<ul>
+			<li>Tempo de compilação: real = 0.076 s ; user = 0.034 s ; system = 0.020 s.
+			</li>
+			<li>Tempo de execução: real = 0.400 s; user = 0.398 s; system = 0.001 s. </li>
+		</ul>
+	</li>
+	
+	<li>Compilação com otimização -mtune=generic (gcc -mtune=generic  primo.c -o primo):
+		<ul>
+			<li>Tempo de compilação: real = 0.071 s ; user = 0.033 s ; system = 0.021 s.
+			</li>
+			<li>Tempo de execução: real = 0.401 s; user = 0.399 s; system = 0.001 s. </li>
+		</ul>
+	</li>
+	
+	
 
 </ol>
+
+<p>Vale ressaltar alguns pontos importantes para esta primeira parte do relatório: </p>
+
+<ul>
+   <li>
+      <p>A versão que teve o tempo de execução real mais rápido foi quando o código primo foi compilado em otimização -O3.  </p>
+   </li>
+   <li>
+      <p>-mtune=native : ele compila o código para a versão que melhor execute no processador da máquina utilizada. Ele tem um custo de tempo de compilação um pouco maior, visto que ele tem que detectar qual o processador é o da máquina utilizada. Estranhamente, ele não melhorou tanto o tempo de execução do programa primo.c, a ponto de que este não foi o método de compilação mais eficiente para a execução do programa. </p>
+     
+   </li>
+   <li>
+      <p>-mtune=generic : Ele compila o programa para a versão que abrange o maior número de processadores utilizados atualmente, tornando o código o mais compativel a maioria dos processadores. Este método não gerou grandes otimizações de execução do programa, sendo superado pelo método de otimização de compilação -O3.  </p>
+   </li>
+</ul>
+
+<h3>Parte 2: Partindo o programa primo.c</h3>
+<p>Nesta parte do exercício, o enunciado requere que o código primo.c seja separado pelos códigos main.c (que só contém a função main do primo.c) e o código calc_primo.c (que contem a função que verifica se um número é primo ou não).</p>
+<p>Para esta parte, eu criei um Makefile que consiste em criar um programa nomeado <em>primo</em>, o qual será compilado pela melhor versão de otimização feita na Parte 1 do experimento (no caso, -O3).</p>
+<p>A seguir, segue os tempos de compilação e execução do código.</p>
+<ul>
+   <li> Tempo de compilação: real = 0.167 s ; user = 0.057 s ; system = 0.032 s. </li>
+	<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
+
+</ul>
+<p>A partir dessas informações, podemos concluir que o tempo de compilação piorou drasticamente, enquanto que o tempo de execução real se manteve constante. </p>
+
+
+<h4>Referências: </h4>
+<ul>
+     <li><p>Esse é um <a href = "http://sdf.org/~riley/blog/2014/10/30/march-mtune/" title ="-march -mtune, What's the Difference?" > link</a> para descrição breve de quando usar -mtune e -march.</p> 
+   </li>
+   <li> <p>Esse é um <a href = "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html" title = "Options That Control Optimization" > link</a> para descrição de cada otimização -O. </p>
+   </li>
+</ul>
