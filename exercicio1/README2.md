@@ -9,56 +9,62 @@
 <ol>
 	<li>Compilação sem otimização (gcc primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.085 s ; user = 0.034 s  ; system = 0.016 s. </li>
-			<li>Tempo de execução: real = 0.400 s; user = 0.398s; system = 0.001 s. </li>
+			<li>Tempo de compilação: real = 0.065 s.</li>
+			<li>Tempo de execução: real = 0.384 s.</li>
 		</ul>
 	</li>
 
 	<li>Compilação com otimização O0 (gcc -O0  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.072 s ; user = 0.033 s ; system = 0.020 s.
+			<li>Tempo de compilação: real = 0.055s.
 			</li>
-			<li>Tempo de execução: real = 0.401 s; user = 0.398 s; system = 0.002 s. </li>
+			<li>Tempo de execução: real = 0.350 s. 
+			</li>
 		</ul>
 	</li>
 
 	<li>Compilação com otimização O1 (gcc -O1  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.076 s ; user = 0.036 s; system = 0.021 s.
+			<li>Tempo de compilação: real = 0.060 s.
 			</li>
-			<li>Tempo de execução: real = 0.399 s; user = 0.397 s; system = 0.001 s. </li>
+			<li>Tempo de execução: real = 0.318 s; 
+			</li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização O2 (gcc -O2  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.088 s ; user = 0.42 ; system = 0.019 s.
+			<li>Tempo de compilação: real = 0.059 s.
 			</li>
-			<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
+			<li>Tempo de execução: real = 0.310 s. 
+			</li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização O3 (gcc -O3  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.080 s ; user = 0.044 s ; system = 0.017 s.
+			<li>Tempo de compilação: real = 0.054s.
 			</li>
-			<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
+			<li>Tempo de execução: real = 0.302 s. 
+			</li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização -mtune=native (gcc -mtune=native  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.076 s ; user = 0.034 s ; system = 0.020 s.
+			<li>Tempo de compilação: real = 0.062 s.
 			</li>
-			<li>Tempo de execução: real = 0.400 s; user = 0.398 s; system = 0.001 s. </li>
+			<li>Tempo de execução: real = 0.354 s. 
+			</li>
 		</ul>
 	</li>
 	
 	<li>Compilação com otimização -mtune=generic (gcc -mtune=generic  primo.c -o primo):
 		<ul>
-			<li>Tempo de compilação: real = 0.071 s ; user = 0.033 s ; system = 0.021 s.
+			<li>Tempo de compilação: real = 0.092 s.
 			</li>
-			<li>Tempo de execução: real = 0.401 s; user = 0.399 s; system = 0.001 s. </li>
+			<li>Tempo de execução: real = 0.359 s. 
+			</li>
 		</ul>
 	</li>
 	
@@ -81,13 +87,14 @@
    </li>
 </ul>
 
-<h3>Parte 2: Partindo o programa primo.c em duas </h3>
+<h3>Parte 2: Partindo o programa primo.c</h3>
 <p>Nesta parte do exercício, o enunciado requere que o código primo.c seja separado pelos códigos main.c (que só contém a função main do primo.c) e o código calc_primo.c (que contem a função que verifica se um número é primo ou não).</p>
-<p>Para esta parte, eu criei um Makefile que consiste em criar um programa nomeado <em>primo</em>, o qual será compilado pela melhor versão de otimização feita na Parte 1 do experimento (no caso, -O3).Além disso, foi necessário criar um arquivo calc_primo.h, que contem o cabeçalho da função primo(int n), para conseguir linkar ambos os códigos fonte.</p>
+<p>Para esta parte, eu criei um Makefile que consiste em criar um programa nomeado <em>primo</em>, o qual será compilado pela melhor versão de otimização feita na Parte 1 do experimento (no caso, -O3). Também foi necessário criar um calc_primo.h, que consiste em um header que referencia a função primo(int n).</p>
 <p>A seguir, segue os tempos de compilação e execução do código.</p>
 <ul>
-   <li> Tempo de compilação: real = 0.167 s ; user = 0.057 s ; system = 0.032 s. </li>
-	<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
+   <li> Tempo de compilação: real = 0.038 s . 
+   </li>
+	<li>Tempo de execução: real = 0.372 s. </li>
 
 </ul>
 <p>A partir dessas informações, podemos concluir que o tempo de compilação piorou drasticamente, enquanto que o tempo de execução real se manteve constante. </p>

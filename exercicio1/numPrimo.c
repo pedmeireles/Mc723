@@ -16,17 +16,17 @@ int main()
 	int n;
 	int i = 1;
 	int counter = 0;
-	printf("insira um numero inteiro\n");
-	scanf("%d", &n);
-	
+	//printf("insira um numero inteiro\n");
+	//scanf("%d", &n);
+	n = 100000;
 
 	
 	for(i = 2; i <= n; i++){
-		printf("iteração atual: %d", i);
+		//printf("iteração atual: %d", i);
 		if(primo(i)){
 			counter++;
 		}
-		printf("  numeros primos presentes no intervalo: %d\n", counter);
+	//	printf("  numeros primos presentes no intervalo: %d\n", counter);
 	}
 	
 	printf("Existem %d numeros primos entre 1 e %d\n", counter, n);
