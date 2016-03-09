@@ -132,6 +132,21 @@
 
 <p>A partir dessa informação, podemos notar que foi confirmado que usar dois códigos fontes melhora o tempo de compilação do programa, mas que isso faz com que o programa fique levemente mais lento no mesmo. Além disso, a otimização -O3 acelerou o tempo de execução em ambas as circinstancias, para o mesmo número de códigos fontes.</p>
 
+<p>Agora, seguira a versão de código de execução para laços que só iteram para números primos. Os códigos foram adaptados para que isso seja possivel, tanto para os programa compilado por um código fonte, tanto para dois códigos fontes, com otimização -O3. A seguir, segue os tempos de cada um deles: </p>
+<ol>
+   <li> Programa compilado por um código fonte:
+   <ul>
+      <li> Tempo de compilação: real = 0.096 s; user = 0.046 s; system = 0.020 s. </li>
+      <li> Tempo de execução: real = 0.865 s; user = 0.862 s; system = 0.002 s. </li>
+   </ul>
+   </li>
+   <li> Programa compilado por dois códigos fontes:
+   <ul>
+      <li> Tempo de compilação: real = 0.053 s; user = 0.021 s; system = 0.011 s. </li>
+      <li> Tempo de execução: real = 0.870 s; user = 0.867 s; system = 0.002 s. </li>
+   </ul>
+   </li>
+</ol>
 
 
 <h4>Referências: </h4>
