@@ -3,6 +3,7 @@
 
 int main()
 {
+
   int n = 104395301;
 
   if (primo(n))
@@ -11,4 +12,5 @@ int main()
     printf("%d não é primo.\n", n);
     
     return 0;
+    
 }	

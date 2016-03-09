@@ -86,11 +86,52 @@
 <p>Para esta parte, eu criei um Makefile que consiste em criar um programa nomeado <em>primo</em>, o qual será compilado pela melhor versão de otimização feita na Parte 1 do experimento (no caso, -O3).Além disso, foi necessário criar um arquivo calc_primo.h, que contem o cabeçalho da função primo(int n), para conseguir linkar ambos os códigos fonte.</p>
 <p>A seguir, segue os tempos de compilação e execução do código.</p>
 <ul>
-   <li> Tempo de compilação: real = 0.167 s ; user = 0.057 s ; system = 0.032 s. </li>
-	<li>Tempo de execução: real = 0.398 s; user = 0.396 s; system = 0.001 s. </li>
+   <li> Tempo de compilação: real = 0.055 s ; user = 0.019 s ; system = 0.011 s. </li>
+	<li>Tempo de execução: real = 0.400 s; user = 0.399 s; system = 0.001 s. </li>
 
 </ul>
-<p>A partir dessas informações, podemos concluir que o tempo de compilação piorou drasticamente, enquanto que o tempo de execução real se manteve constante. </p>
+<p>A partir dessas informações, podemos concluir que o tempo de compilação melhorou drasticamente, enquanto que o tempo de execução decresceu levemente. </p>
+
+
+<h3>Parte 3: Alterando levemente o código primo.c</h3>
+
+<p>Para esta parte, foi requisitado de que fosse feita uma pequena alteração do código primo.c para que ele contasse todos os primos no intervalo 1 até a entrada n (que deveria ser inserida por linha de comando).</p>
+
+<p>Essas alteração leve, sem que alterasse o código que confirma se um número é primo, somente alterando a função main do programa. </p>
+
+<p>Compilando esta nova versão do programa, tanto para um arquivo fonte para dois arquivos fontes, testando para uma entrada <strong>n = 100000</strong>, chegamos as seguintes informações:</p>
+<ol>
+<li>Programa compilado para um código fonte, sem otimização:
+		<ul>
+			<li>Tempo de compilação: real = 0.093 s, user = 0.031 s, system =0.017 s . </li>
+			<li>Tempo de execução: real = 1.733 s, user = 1.731s, system =0.001 s </li>
+		</ul>
+	
+	</li>
+	<li>Programa compilado para um código fonte, com otimização -O3:
+		<ul>
+			<li>Tempo de compilação: real = 0.097 s, user = 0.018 s, system =0.017 s . </li>
+			<li>Tempo de execução: real = 1.726 s, user = 1.724 s, system =0.001 s </li>
+		</ul>
+	
+	</li>
+<li>Programa compilado para dois códigos fontes, sem otimização:
+		<ul>
+			<li>Tempo de compilação: real = 0.051 s, user = 0.031 s, system =0.010 s . </li>
+			<li>Tempo de execução: real = 1.738 s, user = 1.736s, system =0.002 s </li>
+		</ul>
+	
+	</li>
+	<li>Programa compilado para dois códigos fontes, com otimização -O3:
+		<ul>
+			<li>Tempo de compilação: real = 0.053 s, user = 0.019 s, system =0.009 s . </li>
+			<li>Tempo de execução: real = 1.734 s, user = 1.731 s, system =0.002 s </li>
+		</ul>
+	</li>
+</ol>
+
+<p>A partir dessa informação, podemos notar que foi confirmado que usar dois códigos fontes melhora o tempo de compilação do programa, mas que isso faz com que o programa fique levemente mais lento no mesmo. Além disso, a otimização -O3 acelerou o tempo de execução em ambas as circinstancias, para o mesmo número de códigos fontes.</p>
+
 
 
 <h4>Referências: </h4>
