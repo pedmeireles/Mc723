@@ -4,7 +4,7 @@
 
 <p>Na parte inicial do exercício 1, iniciado em 04/03/2016, foi dado aos alunos um código em C chamado primo.c, o qual deveria ser analisado o tempo de execução e de compilação do mesmo, para cada tipo de compilação executada pelo mesmo. </p>
 
-<p>Por questão de boa prática de execução de programas, tanto a compilação quanto a execução de cada um dos métodos de compilação do programa foram executados 5 vezes, e foi calculado a média aritmética de cada um. A seguir, será relatado as médias de compilação e execução de cada um deles:</p>
+<p>Por questão de boa prática de execução de programas, tanto a compilação quanto a execução de cada um dos métodos de compilação do programa foram executados 5 vezes, e foram calculados a média aritmética de cada um (este método de média foi aplicado ao longo de todo o experimento). A seguir, será relatado as médias de compilação e execução de cada um deles:</p>
 
 <ol>
 	<li>Compilação sem otimização (gcc primo.c -o primo):
@@ -150,7 +150,7 @@
 
 <p>Pudemos notar que o tempo de execução melhorou drasticamente, no momento em que foi diminuido pela metade o número de testes que o número primo tem que executar.</p>
 
-<h3>Utilizando o Gprof, e paralelizando o programa <\h3>
+<h3>Parte 4: Utilizando o Gprof, e paralelizando o programa.<\h3>
 
 <p>Utilizando o Gprof da maneira adequada, ele retornou um relatório de execução do programa que confirma que o tempo de execução é focado na função primo, por conta de ela ser chamada milhares de vezes para um número de testes grandes. <\p>
 
