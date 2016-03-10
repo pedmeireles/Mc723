@@ -152,7 +152,7 @@
 
 <h3>Parte 4: Utilizando o Gprof, e paralelizando o programa.</h3>
 
-<p>Utilizando o Gprof da maneira adequada, ele retornou um relatório de execução do programa que confirma que o tempo de execução é focado na função primo, por conta de ela ser chamada milhares de vezes para um número de testes grandes. <\p>
+<p>Utilizando o Gprof da maneira adequada, ele retornou um relatório de execução do programa que confirma que o tempo de execução é focado na função primo, por conta de ela ser chamada milhares de vezes para um número de testes grandes. </p>
 
 <p>Para tentar melhorar o tempo de execução do código, mantendo a otimização de compilação que se destacou no programa, foi possivel notar uma redução de tempo enorme em comparação com o código serializado (utilizando o openMP para paralelizar o programa). </p>
 <p>A seguir, será ilustrado o tempo de execução para o programa, tanto para um código fonte, quanto para dois códigos fontes: </p>
