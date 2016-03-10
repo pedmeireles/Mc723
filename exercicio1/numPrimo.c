@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 int primo(int n)
 {
   int i;
@@ -10,7 +10,6 @@ int primo(int n)
   
   return 1;
 }
-
 int main(int argc, char *argv[])
 {
 	if(argc != 2){
@@ -20,9 +19,8 @@ int main(int argc, char *argv[])
 	
 	int n;
 	n = atoi(argv[1]);
-	int i = 1;
 	int counter = 0;
-
+	int i;
 	if( n >= 2){
 	   counter++;
 	}
