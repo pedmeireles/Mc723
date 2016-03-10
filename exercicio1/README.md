@@ -150,7 +150,7 @@
 
 <p>Pudemos notar que o tempo de execução melhorou drasticamente, no momento em que foi diminuido pela metade o número de testes que o número primo tem que executar.</p>
 
-<h3>Parte 4: Utilizando o Gprof, e paralelizando o programa.<\h3>
+<h3>Parte 4: Utilizando o Gprof, e paralelizando o programa.</h3>
 
 <p>Utilizando o Gprof da maneira adequada, ele retornou um relatório de execução do programa que confirma que o tempo de execução é focado na função primo, por conta de ela ser chamada milhares de vezes para um número de testes grandes. <\p>
 
