@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
+
+
 int primo(int n)
 {
   int i;
@@ -18,19 +21,23 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 	
-	int n;
+	int n, chunk;
 	n = atoi(argv[1]);
 	int i = 1;
 	int counter = 0;
+	chunk = 10;
 
 	if( n >= 2){
 	   counter++;
 	}
+	
+	#pragma omp default(shared) private(i) reduction(+: counter)
+	{
 	for(i = 3; i <= n; i = i + 2){
 		if(primo(i)){
 			counter++;
 			}
 		}
-	
+	}
 	printf("Existem %d numeros primos entre 1 e %d\n", counter, n);
 }
