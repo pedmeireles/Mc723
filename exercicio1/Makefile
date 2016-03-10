@@ -1,6 +1,6 @@
-all: primosNumbO3
-primosNumbO3: calc_primo.o main.o
-	gcc -o primosNumbO3 calc_primo.o main.o -O3
+all: primosNumb13
+primosNumb13: calc_primo.o main.o
+	gcc -O3 -fopenmp calc_primo.o main.o  -o primosNumb13
 	
 calc_primo.o: calc_primo.c
 	gcc -o calc_primo.o -c calc_primo.c -W -Wall -ansi -pedantic

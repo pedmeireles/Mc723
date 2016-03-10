@@ -148,6 +148,24 @@
    </li>
 </ol>
 
+<p>Pudemos notar que o tempo de execução melhorou drasticamente, no momento em que foi diminuido pela metade o número de testes que o número primo tem que executar.</p>
+
+<h3>Utilizando o Gprof, e paralelizando o programa <\h3>
+
+<p>Utilizando o Gprof da maneira adequada, ele retornou um relatório de execução do programa que confirma que o tempo de execução é focado na função primo, por conta de ela ser chamada milhares de vezes para um número de testes grandes. <\p>
+
+<p>Para tentar melhorar o tempo de execução do código, mantendo a otimização de compilação que se destacou no programa, foi possivel notar uma redução de tempo enorme em comparação com o código serializado (utilizando o openMP para paralelizar o programa). </p>
+<p>A seguir, será ilustrado o tempo de execução para o programa, tanto para um código fonte, quanto para dois códigos fontes: </p>
+
+<ul>
+
+	<li> Tempo de execução para um código fonte: real = 0.228 s; user = 0.876 s; system = 0.001 s. </li>
+	<li> Tempo de execução para dois códigos fontes: real = 0.868 s; user = 0.867 s; system = 0.001 s. </li>
+	
+</ul>
+<p>Com essas informações, pudemos comprovar que, utilizando a configuração defauld de números de threads do openMP (que no caso, é 4 threads), ele agilizou em 4 vezes a função primo() para o programa executavel compilado para um código fonte, enquanto que o tempo de execução do programa com dois códigos se manteve igual (o que é peculiar, visto que deveria ter ocorrido o mesmo fenômeno) </p>
+<p>Para agilizar ainda mais a execução do programa, seria necessário otimizar o algoritmo de detecção de um número primo. A base para isso seria, por exemplo, ao invéz de analisar o intervalo de impares inteiro (de 1 até n), poderia analisar de 1 até a raiz quadrada de n (pois numeros maiores do que isso não fazem sentido para serem analisados). </p>
+
 
 <h4>Referências: </h4>
 <ul>
