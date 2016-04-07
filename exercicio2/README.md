@@ -49,7 +49,7 @@ Tabela 1: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de
 | 32                   | 64                        | 0.0023                  |
 | 32                   | 128                       | 0.0021                  |
 
- Tabela 3: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de dados: 128
+ Tabela 3: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de dados: 128Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
 |----------------|--------------------|-------------------|
@@ -60,7 +60,7 @@ Tabela 1: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de
 | 512            | 128                | 0.0043            |
 | 1024           | 128                | 0.0047            |
 
-Tabela 4: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de instruções: 128
+Tabela 4: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de instruções: 128Kb
 
 | Size of Block (b) | Size of Memoryruction) (Kb) | Demand Miss Rate |
 |---------------|----------------------------|------------------|
@@ -108,7 +108,7 @@ Tabela 5: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de
 | 32                | 64                  | 0.1529            |
 | 32                | 128                 | 0.1519            |
 
- Tabela 7: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 16
+ Tabela 7: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 16Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
 |-------------------|---------------------|------------------|
@@ -121,7 +121,7 @@ Tabela 5: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de
 | 2048              | 16                  | 0                |
 | 4096              | 16                  | 0                |
 
- Tabela 8: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128
+ Tabela 8: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
 |-------------------|---------------------|-------------------|
@@ -172,7 +172,7 @@ Tabela 9: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de
 | 32                | 64                  | 0.1805           |
 | 32                | 128                 | 0.1476           |
 
-Tabela 11: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 16
+Tabela 11: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 16Kb
 
 | Size of Block  (b) | Size of Memory (Kb) | Demand Miss Rate  |
 |--------------------|---------------------|-------------------|
@@ -184,7 +184,7 @@ Tabela 11: Variação do tamanho do bloco da cache L1 de instruções. Tamanho d
 | 1024               | 16                  | 0                 |
 | 2048               | 16                  | 0                 |
 
- Tabela 12: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128
+ Tabela 12: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
 |-------------------|---------------------|------------------|
@@ -232,7 +232,7 @@ Tabela 13: Variação do tamanho da cache L1 de instruções. Tamanho do bloco d
 | 32                  | 64                  | 0.017            |
 | 32                  | 128                 | 0.012            |
 
-Tabela 15: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 128
+Tabela 15: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 128Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
 |-------------------|---------------------|------------------|
@@ -243,7 +243,7 @@ Tabela 15: Variação do tamanho do bloco da cache L1 de instruções. Tamanho d
 | 512               | 128                 | 0.0015           |
 | 1024              | 128                 | 0.0016           |
 
- Tabela 16: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128
+ Tabela 16: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128Kb
 
 | Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
 |-------------------|---------------------|-------------------|
@@ -268,7 +268,15 @@ A partir destes gráficos, podemos concluir que a melhor configuração das cach
 * Cache L1 de instrução: 128Kb de tamanho total, e tamanho do bloco 512b
 * Cache L1 de dados: 128Kb de tamanho total, e 128b de bloco, onde se encontrou a ponta do vale.
 
+####Observações finais
 
+Para os programas terminados em .m2b, foi notado de que eles não precisam de uma cache de instruções muito grandes, devido ao fato de já estar no meio do fluxo de execução. Eles precisam de caches de dados mais otimizadas, por fazer buscas frequentes de dados ao longo da execução dos respectivos programas.
+
+Para tanto, para estudar melhor as caches de instrução, melhor avaliar mais os pontos dos programas terminados em .f2b, pois estes exigem maior variação do fluxo de instruções dos programas, exigindo mais da cache L1 de instrução. 
+
+A conclusão de qual a melhor configuração de cada cache se encontra ao final de cada análise dos programas.
+
+O número de iterações utilizadas no *dinero* foi de 20 execuções. 
 
 
 ### Referencias
