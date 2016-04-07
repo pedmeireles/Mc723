@@ -81,6 +81,135 @@ A seguir, será ilustrado o gráfico de cada uma das tabelas, enumerado apropria
 
  ![alt text][grafico4]
 
+A partir destes gráficos, podemos concluir que a melhor configuração das caches L1 são:
+* Cache L1 de instrução: 128Kb de tamanho total, e 256b de bloco;
+* Cache L1 de dados: 128Kb de tamanho total, e 128b de bloco. Vale ressaltar que ocorreu uma anomalia no gráfico, pois ouve dois momentos o qual ele sofreu ascensão de demand miss rate, e o usual é que este tipo de ascensão só ocorre uma vez. Neste caso, foi selecionado o mínimo entre os dois vales (o menor deles).
+
+####Lucas.m2b
+A seguir, será apresentado as seguintes tabelas, nas suas respectivas ordens:
+1. Tabela 5: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de instruções: 32b
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|-------------------|---------------------|-------------------|
+| 32                | 16                  | 0                 |
+| 32                | 32                  | 0                 |
+| 32                | 64                  | 0                 |
+| 32                | 128                 | 0                 |
+
+
+2. Tabela 6: Variação do tamanho da cache L1 de dados.  Tamanho do bloco de dados: 32b
+ 
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|-------------------|---------------------|-------------------|
+| 32                | 16                  | 0.1588            |
+| 32                | 32                  | 0.1549            |
+| 32                | 64                  | 0.1529            |
+| 32                | 128                 | 0.1519            |
+
+3. Tabela 7: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 128
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
+|-------------------|---------------------|------------------|
+| 32                | 16                  | 0                |
+| 64                | 16                  | 0                |
+| 128               | 16                  | 0                |
+| 256               | 16                  | 0                |
+| 512               | 16                  | 0                |
+| 1024              | 16                  | 0                |
+| 2048              | 16                  | 0                |
+| 4096              | 16                  | 0                |
+
+4. Tabela 8: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|-------------------|---------------------|-------------------|
+| 32                | 128                 | 0.1519            |
+| 64                | 128                 | 0.0813            |
+| 128               | 128                 | 0.0473            |
+| 256               | 128                 | 0.0314            |
+| 512               | 128                 | 0.2096            |
+| 1024              | 128                 | 0.2292            |
+| 2048              | 128                 | 0.2467            |
+| 4096              | 128                 | 0.2773            |
+
+
+A seguir, será ilustrado o gráfico de cada uma das tabelas, enumerado apropriadamente:
+
+![alt text][grafico5]
+
+![alt text][grafico6]
+
+ ![alt text][grafico7]
+
+ ![alt text][grafico8]
+
+A partir destes gráficos, podemos concluir que a melhor configuração das caches L1 são:
+* Cache L1 de instrução: 16Kb de tamanho total, e tamanho irrelevante do bloco (neste caso, atribuido o mesmo valor que na cache de dados, que foi de 256b);
+* Cache L1 de dados: 128Kb de tamanho total, e 256b de bloco.
+
+
+####Swim.m2b
+A seguir, será apresentado as seguintes tabelas, nas suas respectivas ordens:
+1. Tabela 9: Variação do tamanho da cache L1 de instruções. Tamanho do bloco de instruções: 32b
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|-------------------|---------------------|-------------------|
+| 32                | 16                  | 0                 |
+| 32                | 32                  | 0                 |
+| 32                | 64                  | 0                 |
+| 32                | 128                 | 0                 |
+
+
+2. Tabela 10: Variação do tamanho da cache L1 de dados.  Tamanho do bloco de dados: 32b
+ 
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
+|-------------------|---------------------|------------------|
+| 32                | 16                  | 0.1812           |
+| 32                | 32                  | 0.1808           |
+| 32                | 64                  | 0.1805           |
+| 32                | 128                 | 0.1476           |
+
+3. Tabela 11: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de dados: 128
+
+| Size of Block  (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|--------------------|---------------------|-------------------|
+| 32                 | 16                  | 0                 |
+| 64                 | 16                  | 0                 |
+| 128                | 16                  | 0                 |
+| 256                | 16                  | 0                 |
+| 512                | 16                  | 0                 |
+| 1024               | 16                  | 0                 |
+| 2048               | 16                  | 0                 |
+
+4. Tabela 12: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de instruções: 128
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate |
+|-------------------|---------------------|------------------|
+| 32                | 16                  | 0.1812           |
+| 32                | 64                  | 0.1805           |
+| 32                | 128                 | 0.1476           |
+| 64                | 128                 | 0.074            |
+| 128               | 128                 | 0.0373           |
+| 256               | 128                 | 0.019            |
+| 512               | 128                 | 0.01             |
+| 1024              | 128                 | 0.0708           |
+| 2048              | 128                 | 0.1289           |
+
+
+A seguir, será ilustrado o gráfico de cada uma das tabelas, enumerado apropriadamente:
+
+![alt text][grafico9]
+
+![alt text][grafico10]
+
+ ![alt text][grafico11]
+
+ ![alt text][grafico12]
+
+A partir destes gráficos, podemos concluir que a melhor configuração das caches L1 são:
+* Cache L1 de instrução: 16Kb de tamanho total, e tamanho irrelevante do bloco (neste caso, atribuido o mesmo valor que na cache de dados, que foi de 512);
+* Cache L1 de dados: 128Kb de tamanho total, e 512b de bloco, onde se encontrou a ponta do vale.
+ 
 
 
 
@@ -96,4 +225,15 @@ A seguir, será ilustrado o gráfico de cada uma das tabelas, enumerado apropria
 [grafico2]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico2.png
 [grafico3]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico3.png
 [grafico4]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico4.png
-[grafico5]:
+[grafico5]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico5.png
+[grafico6]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico6.png
+[grafico7]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico7.png
+[grafico8]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico8.png
+[grafico9]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico9.png
+[grafico10]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico10.png
+[grafico11]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico11.png
+[grafico12]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico12.png
+[grafico13]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico13.png
+[grafico14]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico14.png
+[grafico15]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico15.png
+[grafico16]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico16.png
