@@ -48,7 +48,18 @@ A seguir, será apresentado as seguintes tabelas, nas suas respectivas ordens:
 | 32                   | 64                        | 0.0023                  |
 | 32                   | 128                       | 0.0021                  |
 
-3. Tabela 3: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de instruções: 128
+3. Tabela 3: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de dados: 128
+
+| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
+|----------------|--------------------|-------------------|
+| 32             | 128                | 0.0021            |
+| 64             | 128                | 0.0023            |
+| 128            | 128                | 0.0019            |
+| 256            | 128                | 0.003             |
+| 512            | 128                | 0.0043            |
+| 1024           | 128                | 0.0047            |
+
+4. Tabela 4: Variação do tamanho do bloco da cache L1 de instruções. Tamanho da cache L1 de instruções: 128
 
 | Size of Block (b) | Size of Memoryruction) (Kb) | Demand Miss Rate |
 |---------------|----------------------------|------------------|
@@ -59,15 +70,16 @@ A seguir, será apresentado as seguintes tabelas, nas suas respectivas ordens:
 | 512           | 128                        | 0.0005           |
 | 1024          | 128                        | 0.0005           |
 
-4. Tabela 4: Variação do tamanho do bloco da cache L1 de dados. Tamanho da cache L1 de dados: 128
-| Size of Block (b) | Size of Memory (Kb) | Demand Miss Rate  |
-|----------------|--------------------|-------------------|
-| 32             | 128                | 0.0021            |
-| 64             | 128                | 0.0023            |
-| 128            | 128                | 0.0019            |
-| 256            | 128                | 0.003             |
-| 512            | 128                | 0.0043            |
-| 1024           | 128                | 0.0047            |
+
+A seguir, será ilustrado o gráfico de cada uma das tabelas, enumerado apropriadamente:
+
+![alt text][grafico1]
+
+![alt text][grafico2]
+
+ ![alt text][grafico3]
+
+ ![alt text][grafico4]
 
 
 
@@ -79,3 +91,9 @@ A seguir, será apresentado as seguintes tabelas, nas suas respectivas ordens:
 [[1]](http://www.hardware.com.br/dicas/entendendo-cache.html) : Descrição breve para melhor interpretação de caches.
 
 [Wikipedia] (https://pt.wikipedia.org/wiki/Cache#Cache_L1) (2) : Explicações breves sobre cache L1
+
+[grafico1]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico1.png
+[grafico2]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico2.png
+[grafico3]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico3.png
+[grafico4]:https://github.com/pedmeireles/Mc723/blob/master/exercicio2/Gr%C3%A1ficos/Grafico4.png
+[grafico5]:
