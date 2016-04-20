@@ -43,6 +43,8 @@ Assim sendo, podemos notar alguns detalhes interessantes:
 * A diferença entre o add e o addu é que o add faz a soma com overflow, e o addu faz uma soma sem sinal, ou seja, sem overflow;
 * O comportamento do addu quando somamos número com sinal negativo é na verdade tornar o número ainda maior do que ele é (para um número unsigned, o bit mais significativo ainda tem significado numérico, enquanto que para um número signed, o bit mais significativo consta como uma flag que verifica se o número é positivo (valor 0) ou negativo (valor 1).
 * Como as operações nunca ocorreriam overflow, a ponto de que o sinal era irrelevante para a operação, nao tendo nenhuma subtração ao longo da execução, o compilador interpretou os inteiros como unsigneds, e não fez nenhuma chamada de add no programa, fazendo preferência com o addu. A mesma lógica de prioridade pode ser aplicada para o addiu, visto que ele foi o tipo de operação de soma que variou para os imediatos. 
+ 
+Nota: Os programas hello.c e hello1.c se encontram dentro do diretório Programas, que se encontra dentro deste diretório (exercicio3).
 
 ####Parte 2: Avaliando o desempenho.
 
