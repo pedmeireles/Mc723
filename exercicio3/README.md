@@ -20,8 +20,8 @@ Os programas correspondentes ao término do meu RA são:
 * rijndael coder (small)
 * gsm coder (large).
 
-#### Parte 1: hello world!
-Fazendo pequenas alterações no arquivo mips_isa.cpp, para que ele tivesse um contador global para cada tipo de operação de adição, foi possivel analisar o tipo de operação de adição preferido pelo compilador gcc ao ler o código em C, para o comportamento do mips.
+#### Parte 1: hello world! Contando instruções.
+Fazendo pequenas alterações no arquivo mips1_isa.cpp, para que ele tivesse um contador global para cada tipo de operação de adição, foi possivel analisar o tipo de operação de adição preferido pelo compilador gcc ao ler o código em C, para o comportamento do mips.
 
 A seguir, será impresso a saída para cada um dos hello worlds distintos. O hello.c corresponde ao hello world convencional, o qual realiza um printf da mensagem. O hello1.c corresponde a criação de uma string que corresponde a mensagem, e para criar mais operações de adição, foi feito de modo que a mensagem fosse impressa char a char, percorrendo o vetor e imprimindo a mensagem desta maneira.
 
@@ -43,3 +43,18 @@ Assim sendo, podemos notar alguns detalhes interessantes:
 * A diferença entre o add e o addu é que o add faz a soma com overflow, e o addu faz uma soma sem sinal, ou seja, sem overflow;
 * O comportamento do addu quando somamos número com sinal negativo é na verdade tornar o número ainda maior do que ele é (para um número unsigned, o bit mais significativo ainda tem significado numérico, enquanto que para um número signed, o bit mais significativo consta como uma flag que verifica se o número é positivo (valor 0) ou negativo (valor 1).
 * Como as operações nunca ocorreriam overflow, a ponto de que o sinal era irrelevante para a operação, nao tendo nenhuma subtração ao longo da execução, o compilador interpretou os inteiros como unsigneds, e não fez nenhuma chamada de add no programa, fazendo preferência com o addu. A mesma lógica de prioridade pode ser aplicada para o addiu, visto que ele foi o tipo de operação de soma que variou para os imediatos. 
+
+####Parte 2: Avaliando o desempenho.
+
+Novamente, fazendo alteração no mips1_isa.cpp, para cada método de instrução, para que:
+* Incrementasse uma variavel global para o número total de instruções;
+* Incrementasse uma variavel das 3 variáveis globais, respectiva ao tipo de instrução que ela corresponde. Os tipos que ela poderia corresponder são:
+  - Controle: corresponde as instruções de jump/branch;
+  - Memória: corresponde as instruções de acesso de memória (load/store);
+  - Outrem: corresponde as outras instruções.
+  - 
+* Incrementasse com o respectivo peso (dependendo do tipo de instrução) uma variável global que corresponde ao número de ciclos total do programa.
+* Mesmo com estas alterações, isto não impediu com que eu utilizasse a opção -s para seguir as estatísticas da simulação (caso tivesse erro de implementação nas partes acima).
+
+Executando os três programas listados anteriormente, cheguei as seguintes conclusões:
+*
