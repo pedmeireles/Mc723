@@ -51,10 +51,17 @@ Novamente, fazendo alteração no mips1_isa.cpp, para cada método de instruçã
 * Incrementasse uma variavel das 3 variáveis globais, respectiva ao tipo de instrução que ela corresponde. Os tipos que ela poderia corresponder são:
   - Controle: corresponde as instruções de jump/branch;
   - Memória: corresponde as instruções de acesso de memória (load/store);
-  - Outrem: corresponde as outras instruções.
-  - 
+  - Outrem: corresponde as outras instruções;
 * Incrementasse com o respectivo peso (dependendo do tipo de instrução) uma variável global que corresponde ao número de ciclos total do programa.
 * Mesmo com estas alterações, isto não impediu com que eu utilizasse a opção -s para seguir as estatísticas da simulação (caso tivesse erro de implementação nas partes acima).
 
 Executando os três programas listados anteriormente, cheguei as seguintes conclusões:
-*
+* O programa Rijndael (small) tem CPI´s de 3.644 e 4.611, respectivamente, Possuindo um total de instruções respectivos de 43383735 e 3291, respectivamente;
+* O programa gsm (Large) tem CPI´s de 3.3 e 3.05, respectivamente, possuindo um total de instruções respectivos a 1467203038 e 572250930, para cada CPI, respectivamente.
+* O programa patricia (small) tem CPI de 4.448, possuindo um total de 178978837 instruções.
+* O programa Rijndael tem 2 partes:o Encode (primeiro CPI) e o Decode (segundo CPI).
+* O programa gsm tem 2 partes: o gsm toast (primeiro CPI) e o untoast (segundo CPI).
+
+A partir destes dados, podemos concluir que o programa que executaria mais rápido, se tivesse o mesmo número de instruções em comparação com os outros, é o programa gsm (large), visto que ele tem o menor CPI. Além disso, o programa que tem m menor número de instruções é o Rijndael (o segundo programa, correspondente ao decode), o que indica que ele também tem o menor número de ciclos da máquina (o que significa que ele executa mais rápidamente do que os outros). 
+
+O CPI corresponde ao número médio de ciclos por instrução; se multiplicado pelo número de instruções, ele dará aproximadamente o número de ciclos da instrução; Quanto maior o número de ciclos de uma instrução, mais tempo ele leva para executar na máquina (pois ele exige mais ciclos de clock).
