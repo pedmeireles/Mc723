@@ -61,6 +61,7 @@ Executando os três programas listados anteriormente, cheguei as seguintes concl
 * O programa patricia (small) tem CPI de 4.448, possuindo um total de 178978837 instruções.
 * O programa Rijndael tem 2 partes:o Encode (primeiro CPI) e o Decode (segundo CPI).
 * O programa gsm tem 2 partes: o gsm toast (primeiro CPI) e o untoast (segundo CPI).
+* Os dados detalhados da saída de cada comando do programa, tal a tabela que calcula o resultado final da soma dos ciclos, e do CPI médio resultante, se encontra no diretório Dados (o único arquivo lá dentro corresponde as planilhas dos 3 programas). 
 
 A partir destes dados, podemos concluir que o programa que executaria mais rápido, se tivesse o mesmo número de instruções em comparação com os outros, é o programa gsm (large), visto que ele tem o menor CPI. Além disso, o programa que tem m menor número de instruções é o Rijndael (o segundo programa, correspondente ao decode), o que indica que ele também tem o menor número de ciclos da máquina (o que significa que ele executa mais rápidamente do que os outros). 
 
