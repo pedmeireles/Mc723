@@ -16,3 +16,30 @@ corresponde a analise do programa do hello world e do hello world modificado, am
 para análise posterior do relatório, e para não necessitar copiar aqui o mesmo. 
 A segunda parte corresponde a execução de 3 programas e a análise do CPI médio de cada um dos programas. 
 Os programas correspondentes ao término do meu RA são:
+* patricia (small)
+* rijndael coder (small)
+* gsm coder (large).
+
+#### Parte 1: hello world!
+Fazendo pequenas alterações no arquivo mips_isa.cpp, para que ele tivesse um contador global para cada tipo de operação de adição, foi possivel analisar o tipo de operação de adição preferido pelo compilador gcc ao ler o código em C, para o comportamento do mips.
+
+A seguir, será impresso a saída para cada um dos hello worlds distintos. O hello.c corresponde ao hello world convencional, o qual realiza um printf da mensagem. O hello1.c corresponde a criação de uma string que corresponde a mensagem, e para criar mais operações de adição, foi feito de modo que a mensagem fosse impressa char a char, percorrendo o vetor e imprimindo a mensagem desta maneira.
+
+* ./mips.x --load=hello.mips
+  - Número total de add: 0
+  - Número total de addu: 176
+  - Número total de addi: 1
+  - Número total de addiu: 299
+  - **Número total de add's**: 476
+
+* ./mips.x --load=hello.mips
+  - Número total de add: 0
+  - Número total de addu: 259
+  - Número total de addi: 1
+  - Número total de addiu: 347
+  - **Número total de add's**: 607
+
+Assim sendo, podemos notar alguns detalhes interessantes:
+* A diferença entre o add e o addu é que o add faz a soma com overflow, e o addu faz uma soma sem sinal, ou seja, sem overflow;
+* O comportamento do addu quando somamos número com sinal negativo é na verdade tornar o número ainda maior do que ele é (para um número unsigned, o bit mais significativo ainda tem significado numérico, enquanto que para um número signed, o bit mais significativo consta como uma flag que verifica se o número é positivo (valor 0) ou negativo (valor 1).
+* Como as operações nunca ocorreriam overflow, a ponto de que o sinal era irrelevante para a operação, nao tendo nenhuma subtração ao longo da execução, o compilador interpretou os inteiros como unsigneds, e não fez nenhuma chamada de add no programa, fazendo preferência com o addu. A mesma lógica de prioridade pode ser aplicada para o addiu, visto que ele foi o tipo de operação de soma que variou para os imediatos. 
